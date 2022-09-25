@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
+import ReactDOM from "react-dom";
 
-export default function index() {
-  return (
-    <div>index</div>
-  )
-}
+const App = () => {
+  return <div>Hi There!</div>;
+};
 
+ReactDOM.render(<App />, document.querySelector("#root"));
