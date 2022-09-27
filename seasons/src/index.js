@@ -5,17 +5,19 @@ class App extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
-    
-    this.state = { lat: null }
+
+    this.state = { lat: null };
+
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({ lat: position.coords.latitude})
+      },
+      (err) => console.log(err)
+    );
   }
 
   render() {
-    window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position),
-      (err) => console.log(err)
-    );
-
-    return <div>{this.state.lat}</div>
+    return <div>Lat: {this.state.lat}</div>;
   }
 }
 
