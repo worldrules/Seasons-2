@@ -15,7 +15,7 @@ class App extends React.Component {
       (err) => console.log(err)
     );
 
-    return <div>{this.state.lat}</div>;
+    return <div>{this.state.lat}</div>
   }
 }
 
